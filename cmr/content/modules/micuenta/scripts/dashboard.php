@@ -51,6 +51,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -89,7 +90,8 @@
 				}).then(function (r) {
 					self.busineses = r.data.records;
 					console.log(self.busineses);
-					
+			
+					$("#preload").hide();
 				}).catch(function (error) {
 					console.log(error);
 					//$.notify(error.response.data.code + error.response.data.message, "error");
@@ -178,6 +180,7 @@
 		mounted: function () {
 			var self = this;
 			console.log('Creando Busineses Single');
+			$("#preload").show();
 			self.find();
 		},
 		methods: {
@@ -203,6 +206,7 @@
 					if(r.data.records[0].client != undefined)
 					{
 						self.post = r.data.records[0].client;
+						$("#preload").hide();
 					}
 					else
 					{
@@ -243,13 +247,14 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").hide();
 		},
 		mounted: function () {
 			var self = this;
 			console.log('Creando Requests Single');
+			$("#preload").show();
 			self.loadLists();
 			self.find();
-			
 		},
 		methods: {
 			createRequest: function(){
@@ -330,7 +335,7 @@
 			},
 			find: function(){
 				var self = this;
-				
+				$("#preload").hide();
 				//$(function(){ $(".date").datepicker({ autoclose: true, todayHighlight: true }); });
 			},
 			loadLists: function(){
@@ -516,6 +521,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -567,6 +573,7 @@
 										var url = 'https://www.openstreetmap.org/export/embed.html?bbox=' + cord2 + ',' + cord2 + '&marker=' + cord1;
 										
 										self.urlMapSearchNewIframe = url;
+										$("#preload").hide();
 									}
 								else
 									{
@@ -594,11 +601,12 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
 			console.log('Creando Requests List');
-			
+			$("#preload").show();
 			self.find();
 		},
 		methods: {
@@ -616,6 +624,7 @@
 					}
 				}).then(function (r) {
 					self.posts = r.data.records;
+					$("#preload").hide();
 				}).catch(function (error) {
 					console.log(error);
 					//$.notify(error.response.data.code + error.response.data.message, "error");
@@ -698,11 +707,11 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
 			console.log('Creando Requests List');
-			
 			self.find();
 			
 			$('#printInvoice').click(function(){
@@ -757,7 +766,7 @@
 					self.totales.totalIvaInclude = priceTotal;
 					
 					console.log(self.totales);
-					
+					$("#preload").hide();
 				}).catch(function (error) {
 					console.log(error);
 					//$.notify(error.response.data.code + error.response.data.message, "error");
@@ -780,7 +789,7 @@
 		mounted: function () {
 			var self = this;
 			console.log('Creando Users List');
-			
+			$("#preload").show();
 			self.find();
 		},
 		methods: {
@@ -820,6 +829,7 @@
 				.then(function (r) {
 					self.posts_pending = r.data.records;
 					console.log(self.posts_pending);
+					$("#preload").hide();
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -849,6 +859,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -858,7 +869,7 @@
 		},
 		methods: {
 			find: function(){
-				
+				$("#preload").hide();
 			},
 			addRequestUser: function(){
 				var self = this;
@@ -901,6 +912,7 @@
 					$.notify("Complete todos los campos.", "warning");
 				}
 				return false;
+				
 			},
 		}
 	});
@@ -915,6 +927,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -943,6 +956,7 @@
 				.then(function (r) {
 					self.posts = r.data.records;
 					console.log(self.posts);
+					$("#preload").hide();
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -962,6 +976,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -988,6 +1003,7 @@
 				.then(function (r) {
 					self.posts = r.data.records;
 					console.log(self.posts);
+					$("#preload").hide();
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -1007,6 +1023,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -1017,6 +1034,7 @@
 		methods: {
 			find: function(){
 				var self = this;
+				$("#preload").hide();
 				/*
 				apiMV.get('/af_invoices_clients', {
 					params: {
@@ -1052,6 +1070,7 @@
 		},
 		create: function () {
 			var self = this;
+			$("#preload").show();
 		},
 		mounted: function () {
 			var self = this;
@@ -1062,6 +1081,7 @@
 		methods: {
 			find: function(){
 				var self = this;
+				$("#preload").hide();
 				/*
 				apiMV.get('/af_invoices_clients', {
 					params: {
@@ -1117,6 +1137,10 @@
 			};
 		},
 		router:router,
+		mounted: function () {
+			
+			$("#preload").show();
+		},
 		mounted: function () {
 			var self = this;
 		},

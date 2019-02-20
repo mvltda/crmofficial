@@ -1,6 +1,6 @@
  <div>
 	<style>
-		svg {
+		#preload svg {
 		  display:block;
 		  width:258px;
 		  height:258px;
@@ -10,16 +10,16 @@
 		  transform:translate(-50%,-50%);
 		}
 
-		.tree {
+		#preload .tree {
 		  fill: #8bc34a;
 		}
 
-		.circle-mask {
+		#preload .circle-mask {
 		  transform-origin: 50% 90%;
 		  animation: scale 5s infinite ease-out;
 		}
 
-		@keyframes scale {
+		#preload @keyframes scale {
 		  0%, 100% {
 			transform: scale(0.0);
 		  }
@@ -40,6 +40,15 @@
 			background: rgba(100, 225, 100, 0.3);
 		}
 	</style>
+    <section class="wthree-row" id="home">
+        <div class="container py-5">
+			<section class="row" id="app">
+				<div class="col-lg-12 py-5" data-blast="bgColor">
+					<router-view></router-view>
+				</div>
+			</section>
+		</div>
+	</section>
     <section id="preload">
 		
 		<svg x="0" y="0" width="258" height="258">
@@ -138,15 +147,6 @@
 		</svg>
 
     </section>
-    <section class="wthree-row" id="home">
-        <div class="container py-5">
-			<section class="row" id="app">
-				<div class="col-lg-12 py-5" data-blast="bgColor">
-					<router-view></router-view>
-				</div>
-			</section>
-		</div>
-	</section>
 </div>
 
 <!-- // SIDEBAR -->
